@@ -12,7 +12,7 @@ def load_data(messages_filepath, categories_filepath):
     Returns:
         df : DataFrame after merging both messages ans categories file
     '''
-	# load messages and categories datasets
+    # load messages and categories datasets
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
     # merge these datasets
@@ -65,7 +65,7 @@ def save_data(df, database_filename):
     
     '''
     engine = create_engine('sqlite:///{}'.format(database_filename))
-    df.to_sql('{}'.format(database_filename), engine, index=False, if_exists='replace')
+    df.to_sql('dis_resp_mes', engine, index=False, if_exists='replace')
     
 def main():
     if len(sys.argv) == 4:
