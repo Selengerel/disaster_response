@@ -31,10 +31,11 @@ def load_data(database_filepath):
     '''
 
     engine = create_engine('sqlite:///'+ database_filepath)
-    df = pd.read_sql('SELECT * FROM messages', engine)
+    df = pd.read_sql_table('dis_resp_mes',con=engine)
     X = df['message'].values 
-    y_cols = df.drop(labels=['id','message','original','genre'],axis=1).columns
-    y = df[y_cols]
+    y = df[df.columns[4:]]
+    category_names = y.columns.tolist()
+
 
 
 def tokenize(text):
@@ -82,7 +83,13 @@ def evaluate_model(model, X_test, Y_test, category_names):
         print('Accuracy {}\n\n'.format(accuracy_score(Y_test.iloc[:, i].values, y_pred[:, i])))
 
 def save_model(model, model_filepath):
-    pass
+    '''
+    Parameters
+    model : ML model
+        trained and ready to be deployed to production.
+    model_filepath : string
+        distination to be saved.
+    '''
     pickle.dump(model,open(model_filepath,'wb'))
 
 def main():
