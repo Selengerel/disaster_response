@@ -32,9 +32,12 @@ def load_data(database_filepath):
 
     engine = create_engine('sqlite:///'+ database_filepath)
     df = pd.read_sql_table('dis_resp_mes',con=engine)
+ #   df = pd.read_sql("SELECT * FROM dis_resp_mes;", engine)
     X = df['message'].values 
     y = df[df.columns[4:]]
     category_names = y.columns.tolist()
+ #   y_cols = df.drop(labels=['id','message','original','genre'],axis=1).columns
+ #   y = df[y_cols]
 
     return X, y, category_names
 
@@ -46,9 +49,17 @@ def tokenize(text):
     Output: cleaned tokenized text as a list object
     '''
     text = text.lower()
-    text = re.sub(r"[^a-zA-Z0-9]", " ", text) 
-    text = word_tokenize(text) 
+    
+    # Normalize text
+    text = re.sub(r"[^a-zA-Z0-9]", " ", text)
+    
+    # Extract the word tokens from the provided text    
+    text = word_tokenize(text)
+    
+    # Remove stop words
     text = [w for w in text if w not in stopwords.words("english")]
+    
+    #Lemmanitizer to remove inflectional and derivationally related forms of a word
     text = [WordNetLemmatizer().lemmatize(w) for w in text]
     
     return text
@@ -59,15 +70,20 @@ def build_model():
     Input: N/A
     Output: Returns the model
     '''
+    # Creating Machine Learning Pipeline
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
     
+    # choose parameters
     parameters = {'clf__estimator__n_estimators': [50]}
-    model = GridSearchCV(pipeline, param_grid=parameters, scoring='recall_micro', cv=4)
     
+    # create grid search object
+    model = GridSearchCV(pipeline, param_grid=parameters, scoring='recall_micro', cv=4)
+   
+    return model
 
 def evaluate_model(model, X_test, Y_test, category_names):
     '''
@@ -75,12 +91,15 @@ def evaluate_model(model, X_test, Y_test, category_names):
     Inputs: Model, X_test, y_test, Catgegory_names
     Outputs: Prints the Classification report & Accuracy Score
     '''
+    # Predicted value of test data   
     y_pred = model.predict(X_test)
   
     for i in range(len(category_names)):
         print('Category: {} '.format(category_names[i]))
         print(classification_report(Y_test.iloc[:, i].values, y_pred[:, i]))
         print('Accuracy {}\n\n'.format(accuracy_score(Y_test.iloc[:, i].values, y_pred[:, i])))
+
+    return range
 
 def save_model(model, model_filepath):
     '''
@@ -90,15 +109,14 @@ def save_model(model, model_filepath):
     model_filepath : string
         distination to be saved.
     '''
+    # Dumping the created model to a file
     pickle.dump(model,open(model_filepath,'wb'))
 
 def main():
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
-        
         X, Y, category_names = load_data(database_filepath)
-        
         X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
         
         print('Building model...')
