@@ -12,7 +12,7 @@ def load_data(messages_filepath, categories_filepath):
     Returns:
         df : DataFrame after merging both messages ans categories file
     '''
-    # load messages and categories datasets
+	# load messages and categories datasets
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
     # merge these datasets
@@ -40,8 +40,7 @@ def clean_data(df):
     
     # rename the columns of `categories`
     categories.columns = category_colnames
-    #categories.head()
-    #print(category_colnames)
+   
     #convert first row value in categories columns to labels
     
     for column in categories:
@@ -54,6 +53,8 @@ def clean_data(df):
     categories.head()
     # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df, categories], axis=1, join="inner").drop_duplicates()
+    
+    df.related.replace(2,1,inplace = True)
     return df
 
 def save_data(df, database_filename):
