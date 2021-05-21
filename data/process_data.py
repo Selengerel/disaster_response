@@ -40,7 +40,7 @@ def clean_data(df):
     
     # rename the columns of `categories`
     categories.columns = category_colnames
-   
+
     #convert first row value in categories columns to labels
     
     for column in categories:
