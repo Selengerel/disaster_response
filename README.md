@@ -47,10 +47,10 @@ I approach as follows:
     
 ## 4. How to Run <a name="run"></a>
 
-1. To run ETL pipeline that cleans data and stores in database
-     python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+1. To run ETL pipeline that cleans data and stores in database:
+   python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
 2. To run ML pipeline that trains classifier and saves
-     python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+   python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
 3. To run web app cd to app directory and execute $ python run.py
 4. To open web app go to http://0.0.0.0:3001/
 
