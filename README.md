@@ -19,7 +19,7 @@
 ## 2. Project Motivation <a name="motivation"></a>
 
 In this project I use disaster messages provided from Figure Eight https://appen.com/ to build a web app that classifies messages using a ML pipeline into 36 categories. 
-I approach as follows:
+The approach is as follows:
 - Build an ETL (Extract, Transform, Load) Pipeline to repair the data.
 - Build a supervised learning model using a machine learning Pipeline.
 - Build a web app that:
@@ -49,9 +49,8 @@ I approach as follows:
 
 1. To run ETL pipeline that cleans data and stores in database: python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
 2. To run ML pipeline that trains classifier and saves: python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
-3. To run web app from the Project Workspace IDE, type in command line: python run.py
-4. Then, open another Terminal Window and type: env|grep WORK
-5. To open web app type in a new web browser window (with different SPACEID): https://viewa7a4999b-3001.udacity-student-workspaces.com
+3. To run web app type following command in the app's directory: python run.py
+4. Go to http://0.0.0.0:3001/
 
 ## 5. Results/Visuals <a name="results"></a>
 
