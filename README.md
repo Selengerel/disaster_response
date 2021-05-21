@@ -1,4 +1,4 @@
-### Table of Contents
+# Table of Contents
 
 1. [Installation and Libraries](#installation)
 2. [Project Motivation](#motivation)
@@ -39,7 +39,6 @@ In this project, I analyze disaster messages provided from Figure Eight https://
       - go.html: classification result page of web app
    - run.py: Flask file that runs app
 
-
     
 ## How to Run <a name="run"></a>
 
@@ -49,3 +48,6 @@ In this project, I analyze disaster messages provided from Figure Eight https://
      python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
 3. To run web app cd to app directory and execute $ python run.py
 4. To open web app go to http://0.0.0.0:3001/
+
+## Results/Visuals <a name="results"></a>
+
