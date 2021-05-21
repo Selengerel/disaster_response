@@ -24,22 +24,23 @@ In this project, I analyze disaster messages provided from Figure Eight https://
 ## File Descriptions <a name="files"></a>
 
 - data
-|- disaster_categories.csv  # CSV file from figure8 for messages 
-|- disaster_messages.csv    # CSV file from figure8 for categories
-|- process_data.py          # Python script to clean and create a database
-|- DisasterResponse.db      # database to save clean data to
+    ├── disaster_categories.csv  # CSV file from figure8 for messages 
+    ├── disaster_messages.csv    # CSV file from figure8 for categories
+    ├── process_data.py          # Python script to clean and create a database
+    ├── DisasterResponse.db      # database to save clean data to
 
 - models
-|- train_classifier.py  # Python script of ML pipeline.
-|- classifier.pkl       # saved model 
+    ├── train_classifier.py  # Python script of ML pipeline.
+    ├── classifier.pkl       # saved model 
 
 - app
-| - template
-| |- master.html  # main page of web app
-| |- go.html      # classification result page of web app
-|- run.py         # Flask file that runs app
+    ├── template
+      ├── master.html  # main page of web app
+      ├── go.html      # classification result page of web app
+    ├── run.py         # Flask file that runs app
 
 
+    
 ## How to Run <a name="run"></a>
 
 1. To run ETL pipeline that cleans data and stores in database
