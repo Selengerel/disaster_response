@@ -56,5 +56,5 @@ I approach as follows:
 
 ## Results/Visuals <a name="results"></a>
 
-![image](https://user-images.githubusercontent.com/77011353/119129804-b0f8e000-ba37-11eb-8f32-aff0d4508c8e.png)
+![image](https://user-images.githubusercontent.com/77011353/119131373-afc8b280-ba39-11eb-86c5-89c035000ac8.png)
 ![image](https://user-images.githubusercontent.com/77011353/119130688-d0dcd380-ba38-11eb-88c2-25745d6a5b6b.png)
