@@ -30,14 +30,14 @@ In this project, I analyze disaster messages provided from Figure Eight https://
    - DisasterResponse.db      # database to save clean data to
 
 - models
-    ├── train_classifier.py  # Python script of ML pipeline.
-    ├── classifier.pkl       # saved model 
+   - train_classifier.py  # Python script of ML pipeline.
+   - classifier.pkl       # saved model 
 
 - app
-    ├── template
-      ├── master.html  # main page of web app
-      ├── go.html      # classification result page of web app
-    ├── run.py         # Flask file that runs app
+   - template
+      - master.html  # main page of web app
+      - go.html      # classification result page of web app
+   - run.py          # Flask file that runs app
 
 
     
