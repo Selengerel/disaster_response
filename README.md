@@ -18,8 +18,13 @@
 
 ## Project Motivation<a name="motivation"></a>
 
-In this project, I analyze disaster messages provided from Figure Eight https://appen.com/ and build a web app that classifies messages using a ML pipeline into 36 categories.   
-   
+In this project I use disaster messages provided from Figure Eight https://appen.com/ to build a web app that classifies messages using a ML pipeline into 36 categories. 
+I approach as follows:
+- Build an ETL (Extract, Transform, Load) Pipeline to repair the data.
+- Build a supervised learning model using a machine learning Pipeline.
+- Build a web app that:
+   - takes an input message and gets the classification results of the input in several categories.
+   - displays visualisations of the training datasets.
    
 ## File Descriptions <a name="files"></a>
 
