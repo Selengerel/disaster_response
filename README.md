@@ -47,10 +47,10 @@ I approach as follows:
     
 ## 4. How to Run <a name="run"></a>
 
-1. To run ETL pipeline that cleans data and stores in database: #python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
-2. To run ML pipeline that trains classifier and saves: #python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
-3. To run web app from the Project Workspace IDE, type in command line: #python run.py
-4. then, open another Terminal Window and type: env|grep WORK
+1. To run ETL pipeline that cleans data and stores in database: python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+2. To run ML pipeline that trains classifier and saves: python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+3. To run web app from the Project Workspace IDE, type in command line: python run.py
+4. Then, open another Terminal Window and type: env|grep WORK
 5. To open web app type in a new web browser window (with different SPACEID): https://viewa7a4999b-3001.udacity-student-workspaces.com
 
 ## 5. Results/Visuals <a name="results"></a>
