@@ -24,20 +24,20 @@ In this project, I analyze disaster messages provided from Figure Eight https://
 ## File Descriptions <a name="files"></a>
 
 - Data
-   - disaster_categories.csv  # CSV file from figure8 for messages
-   - disaster_messages.csv    # CSV file from figure8 for categories
-   - process_data.py          # Python script to clean and create a database
-   - DisasterResponse.db      # database to save clean data to
+   - disaster_categories.csv: CSV file from figure8 for messages
+   - disaster_messages.csv: CSV file from figure8 for categories
+   - process_data.py: Python script to clean and create a database
+   - DisasterResponse.db: database to save clean data to
 
 - Models
-   - train_classifier.py  # Python script of ML pipeline.
-   - classifier.pkl       # saved model 
+   - train_classifier.py: Python script of ML pipeline.
+   - classifier.pkl: saved model 
 
 - App
    - template
-      - master.html  # main page of web app
-      - go.html      # classification result page of web app
-   - run.py          # Flask file that runs app
+      - master.html: main page of web app
+      - go.html: classification result page of web app
+   - run.py: Flask file that runs app
 
 
     
