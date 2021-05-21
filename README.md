@@ -52,4 +52,4 @@ In this project, I analyze disaster messages provided from Figure Eight https://
 ## Results/Visuals <a name="results"></a>
 
 ![image](https://user-images.githubusercontent.com/77011353/119129804-b0f8e000-ba37-11eb-8f32-aff0d4508c8e.png)
-![image](https://user-images.githubusercontent.com/77011353/119130433-83606680-ba38-11eb-83b9-02eb361c4c0c.png)
+![image](https://user-images.githubusercontent.com/77011353/119130688-d0dcd380-ba38-11eb-88c2-25745d6a5b6b.png)
