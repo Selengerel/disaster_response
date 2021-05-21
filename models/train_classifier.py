@@ -32,9 +32,12 @@ def load_data(database_filepath):
 
     engine = create_engine('sqlite:///'+ database_filepath)
     df = pd.read_sql_table('dis_resp_mes',con=engine)
+ #   df = pd.read_sql("SELECT * FROM dis_resp_mes;", engine)
     X = df['message'].values 
     y = df[df.columns[4:]]
     category_names = y.columns.tolist()
+ #   y_cols = df.drop(labels=['id','message','original','genre'],axis=1).columns
+ #   y = df[y_cols]
 
     return X, y, category_names
 
