@@ -23,17 +23,17 @@ In this project, I analyze disaster messages provided from Figure Eight https://
    
 ## File Descriptions <a name="files"></a>
 
-- data
+- Data
    - disaster_categories.csv  # CSV file from figure8 for messages
    - disaster_messages.csv    # CSV file from figure8 for categories
    - process_data.py          # Python script to clean and create a database
    - DisasterResponse.db      # database to save clean data to
 
-- models
+- Models
    - train_classifier.py  # Python script of ML pipeline.
    - classifier.pkl       # saved model 
 
-- app
+- App
    - template
       - master.html  # main page of web app
       - go.html      # classification result page of web app
