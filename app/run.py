@@ -11,7 +11,6 @@ from plotly.graph_objs import Bar
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
 
-
 app = Flask(__name__)
 
 def tokenize(text):
@@ -43,8 +42,12 @@ def index():
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
+    category_names = df.columns.values[4:]
+    category_counts = df[category_names].sum()    
+    
+    
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
+    # TODO: Below is an example - modify to create your own visuals    
     graphs = [
         {
             'data': [
@@ -63,9 +66,27 @@ def index():
                     'title': "Genre"
                 }
             }
+        },
+        { 
+            'data' : [
+                    Bar(x=category_counts,y=category_names, orientation='h')
+                    ],
+            'layout' : {
+                    'title' : 'Distribution of Disaster Category',
+                    'yaxis' : {
+                        'title' : 'Category'
+                    },
+                    'xaxis' : {
+                        'title' : 'Count'
+                    },
+                'template':'plotly_dark'
+            }
         }
     ]
-    
+  
+
+        
+        
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
